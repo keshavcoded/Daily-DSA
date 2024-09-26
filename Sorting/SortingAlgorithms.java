@@ -23,6 +23,27 @@ public class SortingAlgorithms {
         
     }
 
+    //bubble sort
+
+    static void bubble_sort(int n, int arr[],String type){
+
+        for(int i=n-1; i>=0;i--){
+            int swapDone = 0;
+            for(int j=0;j<=i-1;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    swapDone = 1;
+                }
+            }
+            if(swapDone == 0){
+                break;
+            }
+        }
+        print(n,arr,type);
+    }
+
     //print method
     static void print(int n, int arr[], String type){
         System.out.println("After " + type + " sort:");
@@ -40,7 +61,8 @@ public class SortingAlgorithms {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
-        selection_sort(n, arr, "selection");
+        /* selection_sort(n, arr, "selection"); */
+        bubble_sort(n, arr, "bubble");
     }
 
 }
