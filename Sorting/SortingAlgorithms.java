@@ -44,6 +44,22 @@ public class SortingAlgorithms {
         print(n,arr,type);
     }
 
+    //insertion sort
+
+    static void insertion_sort(int n,int arr[], String type){
+        for(int i=0;i<n;i++){
+            int curr = i;
+            while(curr>0 && arr[curr-1] > arr[curr]){
+                int temp = arr[curr-1];
+                arr[curr-1] = arr[curr];
+                arr[curr] = temp;
+                curr--;
+            }
+        }
+
+        print(n, arr, type);
+    }
+
     //print method
     static void print(int n, int arr[], String type){
         System.out.println("After " + type + " sort:");
@@ -56,13 +72,14 @@ public class SortingAlgorithms {
 
         int arr[] = {13, 46, 24, 52, 20, 9};
         int n = arr.length;
-        System.out.println("Before selection sort:");
+        System.out.println("Unsorted Input Array:");
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
         /* selection_sort(n, arr, "selection"); */
-        bubble_sort(n, arr, "bubble");
+        /* bubble_sort(n, arr, "bubble"); */
+        insertion_sort(n, arr, "insertion");
     }
 
 }
