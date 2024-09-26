@@ -2,6 +2,8 @@ package Sorting;
 
 public class SortingAlgorithms {
 
+
+    //selection sort
     static void selection_sort(int n, int arr[], String type){
 
 
@@ -16,6 +18,13 @@ public class SortingAlgorithms {
                 arr[min] = arr[i];
                 arr[i] = temp;
         }
+
+        print(n,arr,type);
+        
+    }
+
+    //print method
+    static void print(int n, int arr[], String type){
         System.out.println("After " + type + " sort:");
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
