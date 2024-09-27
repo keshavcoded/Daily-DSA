@@ -1,6 +1,6 @@
 package Sorting;
 
-public class RecusriveBubble {
+public class RecusriveSorting {
 
     static void recursive_bubbleSort(int arr[],int n){
 
@@ -23,6 +23,22 @@ public class RecusriveBubble {
         recursive_bubbleSort(arr, n-1);
     }
 
+    static void recursive_insertionSort(int arr[],int n, int i){
+
+        //base case
+        if(n==i) return;
+
+        int curr = i;
+        while(curr>0 && arr[curr]<arr[curr-1]){
+            int temp = arr[curr];
+            arr[curr] = arr[curr-1];
+            arr[curr-1] = temp;
+            curr--;
+        }
+
+        recursive_insertionSort(arr, n, i+1);
+    }
+
     public static void main(String[] args) {
         int arr[] = {13, 46, 24, 52, 20, 9};
         int n = arr.length;
@@ -32,7 +48,8 @@ public class RecusriveBubble {
         }
         System.out.println();
 
-        recursive_bubbleSort(arr, n);
+        /* recursive_bubbleSort(arr, n); */
+        recursive_insertionSort(arr, n, 0);
 
         System.out.println("After sorting array:");
         for (int i = 0; i < n; i++) {
